@@ -22,8 +22,13 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="admin-toggle" id="adminToggle" aria-label="Admin panel" title="Admin (Ctrl+Shift+A)">⚙️</button>
+            </div>
         </div>
     </nav>
 
@@ -47,27 +52,12 @@
                 <div class="accent-line"></div>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" id="aboutText">
                     <p>I'm a passionate developer who loves creating elegant solutions to complex problems. With a keen eye for design and a solid foundation in web technologies, I build websites and applications that are both beautiful and functional.</p>
                     <p>When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, or enjoying a good cup of coffee.</p>
                 </div>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="skill-icon">💻</span>
-                        <h3>Web Development</h3>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎨</span>
-                        <h3>UI/UX Design</h3>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">📱</span>
-                        <h3>Responsive Design</h3>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">⚡</span>
-                        <h3>Performance</h3>
-                    </div>
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Skills loaded dynamically -->
                 </div>
             </div>
         </div>
@@ -80,45 +70,27 @@
                 <h2>Featured Projects</h2>
                 <div class="accent-line"></div>
             </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #F5A976 0%, #D4845C 100%);"></div>
-                    <div class="project-content">
-                        <h3>Modern Portfolio</h3>
-                        <p>A sleek portfolio website built with clean HTML, CSS, and JavaScript. Features smooth animations and mobile-first design.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="html">HTML/CSS/JS</button>
+                <button class="filter-btn" data-filter="react">React</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #78C7A1 0%, #5A9E7E 100%);"></div>
-                    <div class="project-content">
-                        <h3>Task Management App</h3>
-                        <p>A productivity app designed with user experience in mind. Includes real-time updates and an intuitive interface.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Design System</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #6B9EDB 0%, #4A73B8 100%);"></div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
-                        <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                </article>
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts loaded dynamically -->
             </div>
         </div>
     </section>
@@ -131,18 +103,34 @@
                 <div class="accent-line accent-line-light"></div>
             </div>
             <p class="contact-intro">I'd love to hear from you. Whether you have a project in mind or just want to chat, feel free to reach out!</p>
+            
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required id="formName">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required id="formEmail">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required id="formMessage"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+
             <div class="contact-links">
-                <a href="mailto:hello@example.com" class="contact-link">
-                    <span class="contact-icon">✉️</span>
-                    <span>Email</span>
+                <a href="https://github.com/Sayed24" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-icon">🔗</span>
+                    <span>GitHub</span>
                 </a>
                 <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener noreferrer">
                     <span class="contact-icon">💼</span>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://github.com" class="contact-link" target="_blank" rel="noopener noreferrer">
-                    <span class="contact-icon">🔗</span>
-                    <span>GitHub</span>
+                <a href="mailto:contact@example.com" class="contact-link">
+                    <span class="contact-icon">✉️</span>
+                    <span>Email</span>
                 </a>
             </div>
         </div>
@@ -151,9 +139,92 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sadat. All rights reserved. Crafted with <span class="heart">❤</span> by hand.</p>
+            <p>&copy; <span id="year"></span> Sadat. All rights reserved. Crafted with <span class="heart">❤</span> by hand.</p>
         </div>
     </footer>
+
+    <!-- Admin Panel Modal -->
+    <div class="admin-modal" id="adminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Admin Panel</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-tab="projects">Projects</button>
+                <button class="admin-tab-btn" data-tab="skills">Skills</button>
+                <button class="admin-tab-btn" data-tab="blog">Blog</button>
+                <button class="admin-tab-btn" data-tab="about">About</button>
+                <button class="admin-tab-btn" data-tab="backup">Backup</button>
+            </div>
+
+            <!-- Projects Tab -->
+            <div class="admin-tab-content active" id="projects-tab">
+                <h3>Manage Projects</h3>
+                <div class="admin-form">
+                    <input type="text" placeholder="Project Title" id="projectTitle">
+                    <textarea placeholder="Project Description" id="projectDesc"></textarea>
+                    <input type="text" placeholder="Technologies (comma separated)" id="projectTech">
+                    <select id="projectCategory">
+                        <option value="html">HTML/CSS/JS</option>
+                        <option value="react">React</option>
+                        <option value="fullstack">Full Stack</option>
+                    </select>
+                    <input type="color" id="projectColor1" value="#F5A976" title="Gradient Color 1">
+                    <input type="color" id="projectColor2" value="#D4845C" title="Gradient Color 2">
+                    <button type="button" id="addProjectBtn" class="admin-btn">Add Project</button>
+                </div>
+                <div class="admin-list" id="projectsList"></div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div class="admin-tab-content" id="skills-tab">
+                <h3>Manage Skills</h3>
+                <div class="admin-form">
+                    <input type="text" placeholder="Skill Name" id="skillName">
+                    <input type="text" placeholder="Skill Icon (emoji)" id="skillIcon" value="💻">
+                    <button type="button" id="addSkillBtn" class="admin-btn">Add Skill</button>
+                </div>
+                <div class="admin-list" id="skillsList"></div>
+            </div>
+
+            <!-- Blog Tab -->
+            <div class="admin-tab-content" id="blog-tab">
+                <h3>Manage Blog Posts</h3>
+                <div class="admin-form">
+                    <input type="text" placeholder="Blog Title" id="blogTitle">
+                    <textarea placeholder="Blog Content (HTML supported)" id="blogContent" rows="6"></textarea>
+                    <input type="text" placeholder="Tags (comma separated)" id="blogTags">
+                    <button type="button" id="addBlogBtn" class="admin-btn">Add Post</button>
+                </div>
+                <div class="admin-list" id="blogList"></div>
+            </div>
+
+            <!-- About Tab -->
+            <div class="admin-tab-content" id="about-tab">
+                <h3>Edit About Section</h3>
+                <div class="admin-form">
+                    <textarea placeholder="About text (HTML supported)" id="aboutContent" rows="8"></textarea>
+                    <button type="button" id="updateAboutBtn" class="admin-btn">Update About</button>
+                </div>
+            </div>
+
+            <!-- Backup Tab -->
+            <div class="admin-tab-content" id="backup-tab">
+                <h3>Data Backup & Restore</h3>
+                <div class="backup-actions">
+                    <button type="button" id="exportBtn" class="admin-btn">📥 Export Data (JSON)</button>
+                    <button type="button" id="importBtn" class="admin-btn">📤 Import Data (JSON)</button>
+                    <button type="button" id="resetBtn" class="admin-btn danger">🔄 Reset to Defaults</button>
+                </div>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
 </body>
